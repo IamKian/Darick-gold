@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Majesty | گالری طلا و جواهر</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <div class="logo">DARIK</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">خانه</a></li>
+                <li><a href="#">کالکشن‌ها</a></li>
+                <li><a href="#">سفارشی</a></li>
+                <li><a href="#">وبلاگ</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <div class="user-btn-wrapper">
+                    <div class="user-btn" id="openAuth">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-dropdown" id="userMenu">
+                        <div class="dropdown-header">پنل کاربری</div>
+                        <a href="#"><i class="fa-solid fa-id-card"></i> پروفایل من</a>
+                        <a href="#"><i class="fa-solid fa-heart"></i> لیست علاقه‌مندی</a>
+                        <div class="divider"></div>
+                        <button onclick="logout()" class="logout-link">
+                            <i class="fa-solid fa-right-from-bracket"></i> خروج از حساب
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-premium">
+        <div class="hero-bg-zoom"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text-box">
+            <h4 class="reveal">LUXURY JEWELRY COLLECTION</h4>
+            <h1 class="reveal">
+                <span id="typewriter"></span><span class="cursor">|</span>
+            </h1>
+            <p class="reveal">طراحی‌های منحصر به فرد که داستان شما را روایت می‌کنند.</p>
+            <div class="hero-actions reveal">
+                <button class="btn-main">خرید آنلاین</button>
+                <button class="btn-secondary">مشاهده کاتالوگ</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-container">
+        <div class="section-header">
+            <span class="line"></span>
+            <h2>پرطرفدارترین‌ها</h2>
+            <span class="line"></span>
+        </div>
+
+        <div class="swiper productSwiper">
+            <div class="swiper-wrapper" id="product-list">
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <div class="logo">DARIK</div>
+                <p>گالری داریک با بیش از دو دهه تجربه در طراحی و ساخت جواهرات خاص، همراه لحظه‌های درخشان شماست.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="#">راهنمای سایز انگشتر</a></li>
+                    <li><a href="#">روش‌های ارسال</a></li>
+                    <li><a href="#">شرایط بازگشت کالا</a></li>
+                    <li><a href="#">سوالات متداول</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>ارتباط با ما</h3>
+                <p><i class="fas fa-map-marker-alt"></i> سیرجان، خیابان نصیری شمالی</p>
+                <p><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                <p><i class="fas fa-envelope"></i> info@darikgold.com</p>
+            </div>
+
+            <div class="footer-section trust-badges">
+                <h3>نمادهای اعتبار</h3>
+                <div class="badge-row">
+                    <div class="enamad-box">E-NAMAD</div>
+                    <div class="enamad-box">SAMANDEHI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>تمامی حقوق این سایت متعلق به گالری داریک می‌باشد &copy; ۲۰۲۶</p>
+        </div>
+    </footer>
+
+    <div class="auth-modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="form-container">
+                <div class="form-tabs">
+                    <button class="tab-btn active" onclick="switchForm('login')">ورود</button>
+                    <button class="tab-btn" onclick="switchForm('register')">ثبت‌نام</button>
+                </div>
+
+                
+                <form id="loginForm" class="auth-form active">
+                    <h2 style="color: #d4af37;">خوش آمدید</h2> <input type="email" placeholder="ایمیل یا شماره موبایل"
+                        required>
+                    <input type="password" placeholder="رمز عبور" required>
+
+                    <div id="loginLoader" class="loader-container" style="display: none;">
+                        <div class="gold-spinner"></div>
+                        <p style="color: #d4af37; font-size: 12px;">در حال بررسی...</p>
+                    </div>
+
+                    <button type="submit" class="btn-main">ورود به حساب</button>
+                    <a href="#" class="forgot-pw">رمز عبور را فراموش کرده‌اید؟</a>
+                </form>
+
+                <form id="registerForm" class="auth-form">
+                    <h2 id="hesab" style="color: #d4af37;">ایجاد حساب کاربری</h2>
+                    <input type="text" placeholder="نام و نام خانوادگی" required>
+                    <input type="email" placeholder="ایمیل" required>
+                    <input type="password" placeholder="رمز عبور" required>
+
+                    <div id="registerLoader" class="loader-container" style="display: none;">
+                        <div class="gold-spinner"></div>
+                        <p style="color: #d4af37; font-size: 12px;">در حال ثبت اطلاعات...</p>
+                    </div>
+
+                    <button type="submit" class="btn-main">تایید و ثبت‌نام</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
